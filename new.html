@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+<h2>Accordion with symbols</h2>
+<p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.</p>
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+body{
+    background-color: #DBE7C9;
+    overflow-x:hidden ;
+    text-align: center;
+    font-size: 30px;
+}
+h1{
+   font-size: 70px;
+}
+
+
+.custom-section {
+  height: 300px;
+  background-color: #627254; /* Change to your desired color */
+}
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.Main{
+    font-size: 65px;
+}
+.Main-list{
+    font-size: 30px;
+}
+.Main-p{
+    font-size: 40px;
+}
+.cta1{
+    background-color: #50623A;
+    border-color: azure;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+.cta2{
+    border-color: #a6ff67;
+    background-color: azure;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    color: black;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color: #50623A;
+  border-color: azure;
+}
+.cta2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color:azure;
+  border-color:  rgb(177, 223, 161);
+  color: black;
+}
+
+.Services img{
+    width: 150px;
+}
+
+.fqa{
+    font-size: 70px;
+}
+.pricing-box {
+background-color: #ffffff;
+padding: 40px 20px;
+border: 1px solid #F8F9FB;
+border-radius: 6px;
+box-shadow: 0 0 1px 0 rgba(0,12,32,0.04), 0 10px 16px 0 rgba(10,31,68,0.06);
+margin-top: 30px;
+transition: all 0.3s ease;
+}
+.pricing-box:hover {
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.reveal{
+position: relative;
+transform: translateY(150px);
+opacity: 0;
+transition: 3s all ease;
+}
+.reveal.active{
+transform: translateY(0);
+opacity: 1;
+}
+
+.pricing-box h3 {
+font-size: 22px;
+letter-spacing: .1em;
+color: #2e9200;
+}
+
+.pricing-box h6 {
+font-size: 60px;
+font-weight: 900;
+color: #3a3f52;
+}
+
+.pricing-box p {
+font-size: 17px;
+margin-top: 15px;
+padding: 0px;
+}
+
+.pricing-box ul {
+padding-left: 10px;
+}
+
+.pricing-box li {
+font-size: 14px;
+font-weight: 300;
+color: #488233;
+letter-spacing: .1em;
+
+}
+
+.pricing-box span {
+font-weight: 500;
+color: #358fcb;
+}
+
+.pricing-box small {
+color: #488233;
+letter-spacing: .2em;
+}
+
+.pricing-box i {
+font-size: 20px;
+color: #87cf54;
+margin-right: 10px;
+}
+
+.pricing-box .demo {
+color: #6772e5!important;
+}
+.Price h6, .Price h2,  .Price h1{
+text-align: center;
+}
+
+.btn-sub{
+color: black;
+margin-bottom:10px ;
+  background-color:azure;
+  border-color: rgb(177, 223, 161) ;
+}
+.btn-sub:HOVER {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color:rgb(177, 223, 161);
+  border-color: azure ;
+  color: black;
+}
+
+.accordion {
+background-color: #eee;
+color: #444;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 15px;
+transition: 0.4s;
+}
+
+.active, .accordion:hover {
+background-color: #ccc;
+}
+
+.accordion:after {
+content: '\002B';
+color: #777;
+font-weight: bold;
+float: right;
+margin-left: 5px;
+}
+
+.active:after {
+content: "\2212";
+}
+
+.panel {
+padding: 0 18px;
+background-color: white;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+}
+
+.footer {
+  background-color: #809d55a4;
+  width: 100%;
+  bottom: 0;
+}
+
+.container {
+  padding: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+
+/* Hide the <p> element in the first section on mobile screens */
+@media (max-width: 767px) {
+.Main-p p {
+display: none;
+}
+.pricing-box{
+width: 90%;
+margin-left: 5%;
+}
+.Services{
+text-align: left;
+font-size: 20px;
+margin-left: 2%;
+}
+
+}
+
+/* Adjust font sizes for better readability on mobile devices */
+@media (max-width: 767px) {
+h1.Main {
+font-size: 40px;
+}
+.Main-list li {
+font-size: 20px;
+}
+.Main-p {
+font-size: 30px;
+}
+.fqa {
+font-size: 50px;
+}
+}
+
+/* Center elements horizontally on both mobile and desktop screens */
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+.container {
+padding: 10px 0;
+}
+}
+
+/* Center the navbar items */
+.navbar-brand, .ml-auto {
+display: flex;
+align-items: center;
+}
+
+/* Center the footer items */
+.footer {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+.footer {
+padding: 20px 0;
+}
+}
