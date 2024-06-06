@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="https://use.typekit.net/yny2hck.css">
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+</head>
+<body>
+    <section class="forms-section">
+        <h1 class="section-title">Animated Forms</h1>
+        <div class="forms">
+            <div class="form-wrapper is-active">
+                <button type="button" class="switcher switcher-login">
+                    Login
+                    <span class="underline"></span>
+                </button>
+                <form id="loginForm" class="form form-login">
+                    <fieldset>
+                        <legend>Please, enter your email and password for login.</legend>
+                        <div class="input-block">
+                            <label for="login-email">E-mail</label>
+                            <input id="txtEmail" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">Password</label>
+                            <input id="txtPassword" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" id="btnLogin" class="btn-login">Login</button>
+                </form>
+            </div>
+            <div class="form-wrapper">
+                <button type="button" class="switcher switcher-signup">
+                    Sign Up
+                    <span class="underline"></span>
+                </button>
+                <form id="signupForm" class="form form-signup">
+                    <fieldset>
+                        <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                        <div class="input-block">
+                            <label for="signup-email">E-mail</label>
+                            <input id="signupEmail" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-phone">Phone Number</label>
+                            <input id="txtPhone" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-address">Home Address</label>
+                            <input id="txtAddress" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">Password</label>
+                            <input id="signupPassword" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" id="btnSignup" class="btn-signup">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        const switchers = [...document.querySelectorAll('.switcher')];
+
+switchers.forEach(item => {
+    item.addEventListener('click', function() {
+        switchers.forEach(item => item.parentElement.classList.remove('is-active'));
+        this.parentElement.classList.add('is-active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure login form is visible initially
+    const loginFormWrapper = document.querySelector('.form-wrapper');
+    if (loginFormWrapper) {
+        loginFormWrapper.classList.add('is-active');
+    }
+});
+
+// Firebase related logic
+(function() {
+    // Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
+        authDomain: "lawn-magic-a3c44.firebaseapp.com",
+        projectId: "lawn-magic-a3c44",
+        storageBucket: "lawn-magic-a3c44.appspot.com",
+        messagingSenderId: "207655043153",
+        appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const firestore = firebase.firestore();
+
+    const txtEmail = document.getElementById('txtEmail');
+    const txtPassword = document.getElementById('txtPassword');
+    const signupEmail = document.getElementById('signupEmail');
+    const signupPassword = document.getElementById('signupPassword');
+    const txtPhone = document.getElementById('txtPhone');
+    const txtAddress = document.getElementById('txtAddress');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnSignup = document.getElementById('btnSignup');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    btnLogin.addEventListener('click', e => {
+        e.preventDefault();
+        const email = txtEmail.value;
+        const pass = txtPassword.value;
+        auth.signInWithEmailAndPassword(email, pass)
+            .then(userCredential => {
+                const user = userCredential.user;
+                // Check if user has additional information
+                firestore.collection('users').doc(user.uid).get()
+                    .then(docSnapshot => {
+                        if (docSnapshot.exists) {
+                            // Redirect to dashboard or another page
+                            window.location.href = 'index.html';
+                        } else {
+                            // Show the additional info form
+                            loginForm.style.display = 'none';
+                            signupForm.style.display = 'block';
+                        }
+                    });
+            })
+            .catch(e => {
+                console.error(e.message);
+            });
+    });
+
+    btnSignup.addEventListener('click', e => {
+        e.preventDefault();
+        const email = signupEmail.value;
+        const pass = signupPassword.value;
+        auth.createUserWithEmailAndPassword(email, pass)
+            .then(userCredential => {
+                const user = userCredential.user;
+                // Show the additional info form for new user
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            })
+            .catch(e => {
+                console.error(e.message);
+            });
+    });
+
+    signupForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const phone = txtPhone.value;
+        const address = txtAddress.value;
+        const user = auth.currentUser;
+        if (user) {
+            firestore.collection('users').doc(user.uid).set({
+                phone: phone,
+                address: address
+            }).then(() => {
+                // Redirect to dashboard or another page
+                window.location.href = 'index.html';
+            }).catch(e => {
+                console.error(e.message);
+            });
+        }
+    });
+
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // User is signed in
+            firestore.collection('users').doc(user.uid).get()
+                .then(docSnapshot => {
+                    if (docSnapshot.exists) {
+                        // Redirect to dashboard or another page
+                        window.location.href = 'index.html';
+                    } else {
+                        // Show the additional info form
+                        loginForm.style.display = 'none';
+                        signupForm.style.display = 'block';
+                    }
+                });
+        } else {
+            // No user is signed in
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        }
+    });
+})();
+
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,417 @@
+/*
+=========================================================
+  CSS File for Index.html
+  Author: Timothy Mims
+  Description: Lawn Magic
+=========================================================
+
+  Table of Contents:
+  1. Base Elements
+  2. NavBars
+  3. Main
+  4. Services
+  5. Pricing
+  6. FQA
+  7. Media Queries
+
+=========================================================
+*/
+
+/* 1. Base Elements */
+/* Styles for base HTML elements like headings, paragraphs, lists, etc. */
+@font-face { font-family: Grass; src: url('Wave of Life Free.otf'); } 
+
+body{
+  background-color: #DBE7C9;
+  overflow-x: hidden;    
+ 
+  font-family: "brevia", sans-serif;
+  font-style: normal;
+    
+}
+h1{
+   font-size: 70px;
+   font-weight: 700;
+
+}
+/* Center elements horizontally on both mobile and desktop screens */
+.container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
+.custom-section {
+  height: 300px;
+  background-color: #627254; /* Change to your desired color */
+  }
+  
+.WWD{
+  font-size: 24px;
+  
+}
+  
+/* 2. NavBars */
+/* Styles for reusable UI components like buttons, cards, forms, etc. */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Center the brand and button vertically */
+.navbar .navbar-toggler {
+  margin-left: auto;
+}
+
+.custom-navbar h1 {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+}
+
+.custom-navbar img {
+  width: 30px;
+  height: 30px;
+}
+
+.navbar img{
+    width: 90px; 
+    height: 90px; 
+    background-color: #d6f381; 
+    border-radius: 50px;
+}
+.nav-link img{
+  width: 50px;
+  height: auto;
+}
+.navbar-brand, .ml-auto {
+  display: flex;
+  align-items: center;
+  }
+    
+/* 3. Main */
+/* Utility classes for common patterns and reusable styles */
+.cta1{
+  background-color: #50623A;
+  border-color: azure;
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+.cta2{
+  border-color: #a6ff67;
+  background-color: azure;
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  color: black;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color: #50623A;
+  border-color: azure;
+}
+.cta2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color:azure;
+  border-color:  rgb(177, 223, 161);
+  color: black;
+}
+
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.Main{
+  font-size: 65px;
+}
+.Main-list{
+  font-size: 30px;
+}
+.Main-p{
+  font-size: 40px;
+}
+.btn-custom{
+  border-color: #c2eca4;
+  background-color: azure;
+  color: black;
+  border-radius: 10px;
+  width: 130px;
+  height: 70px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color:azure;
+  border-color:  rgb(177, 223, 161);
+  color: black;
+}
+  
+/* 4. Services */
+/* Media queries for responsive design */
+.Services img{
+  width: 120px;
+}
+.Services h2{
+  font-weight: 700;
+}
+.Services p{
+  font-size: 15px;
+}
+.Services div{
+  width: 100%;
+}
+
+/* 5. Pricing */
+.pricing-box {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border: 1px solid #F8F9FB;
+  border-radius: 6px;
+  box-shadow: 0 0 1px 0 rgba(0,12,32,0.04), 0 10px 16px 0 rgba(10,31,68,0.06);
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  }
+.pricing-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 3s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.pricing-box h3 {
+  font-size: 22px;
+  letter-spacing: .1em;
+  color: #2e9200;
+}
+
+.pricing-box h6 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #3a3f52;
+}
+
+.pricing-box p {
+  font-size: 17px;
+  margin-top: 15px;
+  padding: 0px;
+}
+
+.pricing-box ul {
+  padding-left: 10px;
+}
+
+.pricing-box li {
+  font-size: 14px;
+  font-weight: 300;
+  color: #488233;
+  letter-spacing: .1em;
+
+}
+
+.pricing-box span {
+  font-weight: 500;
+  color: #358fcb;
+}
+
+.pricing-box small {
+  color: #488233;
+  letter-spacing: .2em;
+}
+
+.pricing-box i {
+  font-size: 20px;
+  color: #87cf54;
+  margin-right: 10px;
+}
+
+.pricing-box .demo {
+  color: #6772e5!important;
+}
+.Price h6, .Price h2,  .Price h1{
+  text-align: center;
+}
+
+.btn-sub{
+  color: black;
+  margin-bottom:10px ;
+  background-color:azure;
+  border-color: rgb(177, 223, 161) ;
+}
+.btn-sub:HOVER {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px  rgb(177, 223, 161);
+  background-color:rgb(177, 223, 161);
+  border-color: azure ;
+  color: black;
+}
+/* 6. FQA */
+.fqa{
+  font-size: 70px;
+}
+
+
+.custom-section2 p{
+  font-size: 20px;
+}
+.accordion {
+  color: #1d4d21;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 33px;
+  transition: 0.4s;
+  border: transparent;
+  margin-left: 30px;
+
+}
+
+.active, .accordion:hover {
+  background-color: rgb(177, 223, 161);
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  margin-left: 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel:hover{
+    background-color: rgb(177, 223, 161);;
+}
+
+.container {
+  padding: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* 7. Media Queries */
+/* Media queries for responsive design */
+
+@media (max-width: 768px) {
+  .navbar-brand h1 {
+      font-size: 1.25rem;
+  }
+}
+
+
+
+/* Hide the <p> element in the first section on mobile screens */
+@media (max-width: 767px) {
+  .Main-p p {
+  display: none;
+  }
+ 
+  .Services{
+  text-align: left;
+  font-size: 20px;
+  }
+  body{
+  text-align: center;
+  margin-left: 6%;
+  }
+  ul{
+      text-align: left;
+  }
+ 
+  .WWD p{
+      font-size: 20px;
+  }
+  .Price p{
+  font-size: 15px;
+}
+  .accordion {
+      font-size: 20px;
+      width: 90%;
+  }
+  .text{
+      font-size:30px;
+      text-align: center;
+      margin-top: 10px;
+      margin: 10px;
+  }
+  .custom-section3 {
+  height: 800px;
+  background-color: #627254; /* Change to your desired color */
+  }
+  .custom-section3 button {
+      margin-left:20% ;
+      width: 240px;
+  }
+  .cta1{
+    margin-bottom: 30px;
+  }
+  .navbar img{
+    width: 50px; 
+    height: 50px;
+  }
+  .navbar-collapse{
+  background-color:rgb(239, 236, 225);
+}
+
+}
+
+/* Adjust font sizes for better readability on mobile devices */
+@media (max-width: 767px) {
+h1.Main {
+font-size: 40px;
+}
+.Main-list li {
+font-size: 20px;
+}
+.Main-p {
+font-size: 30px;
+}
+.fqa {
+font-size: 50px;
+}
+}
+
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+.container {
+padding: 10px 0;
+}
+}

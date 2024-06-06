@@ -18,33 +18,202 @@
 
     <title>Login & Signup Firebase</title>
     <link rel="stylesheet" href="stylesheet.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d4edda;
+        }
+
+        .center {
+            width: 90%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            height: 45px;
+            font-size: 16px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .center {
+                width: 100%;
+                margin: 50px auto;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .center {
+                width: 100%;
+                margin: 20px auto;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="col-4 center" id="loginForm">
-          <div class="form-group">
+        <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" class="form-control shadow-sm" id="txtEmail" name="email">
-          </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="pwd">Password:</label>
             <input type="password" class="form-control shadow-sm" id="txtPassword" name="password">
-          </div>
-          <button type="submit" class="btn btn-primary shadow" id="btnLogin">Login</button>
-          <button type="submit" class="btn btn-primary shadow" id="btnSignup">Signup</button>
+        </div>
+        <button type="submit" class="btn shadow" id="btnLogin">Login</button>
+        <button type="submit" class="btn shadow" id="btnSignup">Signup</button>
     </div>
 
     <div class="col-4 center" id="userInfoForm" style="display:none;">
-          <div class="form-group">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control shadow-sm" id="txtFirstName" name="firstName">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control shadow-sm" id="txtLastName" name="lastName">
+    </div>
+        <div class="form-group">
             <label for="phone">Phone Number:</label>
             <input type="text" class="form-control shadow-sm" id="txtPhone" name="phone">
-          </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="address">Home Address:</label>
             <input type="text" class="form-control shadow-sm" id="txtAddress" name="address">
-          </div>
-          <button type="submit" class="btn btn-primary shadow" id="btnSubmitInfo">Submit</button>
+        </div>
+        <button type="submit" class="btn shadow" id="btnSubmitInfo">Submit</button>
     </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+        (function() {
+            var firebaseConfig = {
+                apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
+                authDomain: "lawn-magic-a3c44.firebaseapp.com",
+                projectId: "lawn-magic-a3c44",
+                storageBucket: "lawn-magic-a3c44.appspot.com",
+                messagingSenderId: "207655043153",
+                appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
+            };
+            firebase.initializeApp(firebaseConfig);
+
+            const auth = firebase.auth();
+            const firestore = firebase.firestore();
+
+            const txtEmail = document.getElementById('txtEmail');
+            const txtPassword = document.getElementById('txtPassword');
+            const txtFirstName = document.getElementById('txtFirstName');
+            const txtLastName = document.getElementById('txtLastName');
+            const txtPhone = document.getElementById('txtPhone');
+            const txtAddress = document.getElementById('txtAddress');
+            const btnLogin = document.getElementById('btnLogin');
+            const btnSignup = document.getElementById('btnSignup');
+            const btnSubmitInfo = document.getElementById('btnSubmitInfo');
+
+            const loginForm = document.getElementById('loginForm');
+            const userInfoForm = document.getElementById('userInfoForm');
+
+            btnLogin.addEventListener('click', e => {
+                e.preventDefault();
+                const email = txtEmail.value;
+                const pass = txtPassword.value;
+                auth.signInWithEmailAndPassword(email, pass).then(userCredential => {
+                    const user = userCredential.user;
+                    firestore.collection('users').doc(user.uid).get().then(docSnapshot => {
+                        if (docSnapshot.exists) {
+                            window.location.href = 'index.html';
+                        } else {
+                            loginForm.style.display = 'none';
+                            userInfoForm.style.display = 'block';
+                        }
+                    });
+                }).catch(e => {
+                    console.error(e.message);
+                });
+            });
+
+            btnSignup.addEventListener('click', e => {
+                e.preventDefault();
+                const email = txtEmail.value;
+                const pass = txtPassword.value;
+                auth.createUserWithEmailAndPassword(email, pass).then(userCredential => {
+                    const user = userCredential.user;
+                    loginForm.style.display = 'none';
+                    userInfoForm.style.display = 'block';
+                }).catch(e => {
+                    console.error(e.message);
+                });
+            });
+
+            btnSubmitInfo.addEventListener('click', e => {
+                e.preventDefault();
+                const firstName = txtFirstName.value;
+                const lastName = txtLastName.value;
+                const phone = txtPhone.value;
+                const address = txtAddress.value;
+                const user = auth.currentUser;
+                if (user) {
+                    firestore.collection('users').doc(user.uid).set({
+                        firstName: firstName,
+                        lastName: lastName,
+                        phone: phone,
+                        address: address
+                    }).then(() => {
+                        window.location.href = 'index.html';
+                    }).catch(e => {
+                        console.error(e.message);
+                    });
+                }
+            });
+
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    firestore.collection('users').doc(user.uid).get().then(docSnapshot => {
+                        if (docSnapshot.exists) {
+                            window.location.href = 'index.html';
+                        } else {
+                            loginForm.style.display = 'none';
+                            userInfoForm.style.display = 'block';
+                        }
+                    });
+                } else {
+                    loginForm.style.display = 'block';
+                    userInfoForm.style.display = 'none';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

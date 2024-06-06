@@ -18,135 +18,18 @@
 
     <title>Client Information</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="/css/Clients.css">
+
   <style>
-    .date{
-      font-size: 80px;
-    }
-    .sidebar {
-      width: 15%;
-      height: 100vh;
-      position: fixed;
-      left: 5vw;
-      top: 15vh;
-      text-align: left;
- }
-    .sidebar-nav a {
-      display: block;
-      padding: 15px;
-      text-decoration: none;
-      color: #333;
-      font-size: 25px;
-    }
-    .sidebar-nav img{
-     width: 43px;
-    }
+    
   
-    body{
-        background-color: rgb(165, 216, 165);
-    }
-    .content-box {
-      padding: 30px;
-      margin-top: 30px;
-      background-color: rgb(255, 255, 255);
-      border-radius: 10px;
-    }
-    .basic-price {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      text-align: right;
-    }
-    .subscription-details {
-      margin-top: 20px;
-    }
-    .subscription-details h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    .subscription-details p {
-      font-size: 16px;
-    }
-    .subscription-details .price {
-      font-size: 16px;
-      text-align: right;
-      margin-top: 20px;
-    }
-    .subscription-details .divider {
-      border-bottom: 1px solid #fff;
-      margin-top: 20px;
-    }
-    .subscription-details .btn {
-      margin-top: 20px;
-    }
   
-    .service-date h2 {
-      font-size: 24px;
-    }
-    .service-date h1 {
-      font-size: 40px;
-      text-align: left;
-    }
- 
-    .history-table {
-      background-color: #f8f9fa;
-    }
-    .history-table th,
-    .history-table td {
-      background-color: white;
-    }
-    .payments-section {
-      margin-top: 30px;
-    }
-    .payments-section h5 {
-      font-size: 20px;
-    }
-    .payments-section p {
-      font-size: 16px;
-    }
-  
-    .Name{
-        margin-top: 14px;
-    }
-    .navbar img {
-      width: 10px;
-    }
-    @media (max-width: 992px) {
-      .sidebar {
-        display: none;
-      }
-      .section-divider {
-        display: none;
-      }
-      .col-lg-8 {
-        width: 100% !important;
-      }
-      .Name{
-        display: none;
-      }
-    }
-    @media (min-width: 992px) {
-      .navbar {
-        display: none;
-      }
-      .Name {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        padding: 10px;
-      }
-      .Name img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
-      .Name h1 {
-        margin: 0;
-      }
-    }
+   
+   
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar d-lg-none nav  bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar d-lg-none nav ">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="img/lawn_magic_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
           <h1 class="mb-0 ml-2">Lawn Magic</h1>
@@ -157,12 +40,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="clientDashboard.html">
                 <img src="grass.png" class="img-fluid" alt="Service 1"> Subscription
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="clientDashboard.html">
                 <img src="user.png" class="img-fluid" alt="Service 2"> Account
               </a>
             </li>
@@ -174,12 +57,13 @@
           </ul>
         </div>
       </nav>
-<div class=Name>
-  <div class="d-flex justify-content-start align-items-center px-4 py-2">
-    <img src="leaf-blower.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    <h1>Lawn Magic</h1>
-  </div>
-</div>
+      <div class=Name>
+        <div class="d-flex justify-content-start align-items-center px-4 py-2">
+          <a href="index.html"><img src="img/lawn_magic_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <h1>Lawn Magic</h1>
+        </div>
+      </div>
 
 <div class="container-fluid">
   <hr class="section-divider">
@@ -233,97 +117,102 @@
     </div>
   </div>
 </div>
-<script>
-    (function () {
-        var firebaseConfig = {
-            apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
-            authDomain: "lawn-magic-a3c44.firebaseapp.com",
-            projectId: "lawn-magic-a3c44",
-            storageBucket: "lawn-magic-a3c44.appspot.com",
-            messagingSenderId: "207655043153",
-            appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
-        };
-        firebase.initializeApp(firebaseConfig);
+  <footer class="container mt-5">
+<p class="float-right"><a href="#">Back to top</a></p>
+<p>© 2024. Created with passion by Circuit Tech Solutions LLC. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+  
+  <script>
+  (function () {
+      var firebaseConfig = {
+          apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
+          authDomain: "lawn-magic-a3c44.firebaseapp.com",
+          projectId: "lawn-magic-a3c44",
+          storageBucket: "lawn-magic-a3c44.appspot.com",
+          messagingSenderId: "207655043153",
+          appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
+      };
+      firebase.initializeApp(firebaseConfig);
 
-       
-        
-        const clientAddress = document.getElementById("clientAddress");
-        const serviceHistory = document.getElementById("serviceHistory");
-        const nextServiceDate = document.getElementById("nextServiceDate");
-        const priceFrequency = document.getElementById("priceFrequency");
-        const customButton = document.getElementById("customButton");
+      
+      
+      const clientAddress = document.getElementById("clientAddress");
+      const serviceHistory = document.getElementById("serviceHistory");
+      const nextServiceDate = document.getElementById("nextServiceDate");
+      const priceFrequency = document.getElementById("priceFrequency");
+      const customButton = document.getElementById("customButton");
 
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                const userId = user.uid;
+      firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+              const userId = user.uid;
 
-                // Fetch user details from Firestore
-                firebase.firestore().collection('users').doc(userId).get().then(doc => {
-                    if (doc.exists) {
-                        const data = doc.data();
-                        clientAddress.textContent = `${data.address || 'N/A'}`;
-                        nextServiceDate.textContent = `${data.nextServiceDate || 'N/A'}`;
-                        priceFrequency.textContent = `Price: $${data.price || 'N/A'} / ${data.frequency || 'N/A'}`;
+              // Fetch user details from Firestore
+              firebase.firestore().collection('users').doc(userId).get().then(doc => {
+                  if (doc.exists) {
+                      const data = doc.data();
+                      clientAddress.textContent = `${data.address || 'N/A'}`;
+                      nextServiceDate.textContent = `${data.nextServiceDate || 'N/A'}`;
+                      priceFrequency.textContent = `Price: $${data.price || 'N/A'} / ${data.frequency || 'N/A'}`;
 
-                        // Fetch service history from Firestore
-                        if (data.serviceHistory) {
-                            const uniqueDates = new Set();
-                            data.serviceHistory.forEach(entry => {
-                                uniqueDates.add(entry.date);
-                            });
+                      // Fetch service history from Firestore
+                      if (data.serviceHistory) {
+                          const uniqueDates = new Set();
+                          data.serviceHistory.forEach(entry => {
+                              uniqueDates.add(entry.date);
+                          });
 
-                            // Clear existing service history
-                            serviceHistory.innerHTML = "";
+                          // Clear existing service history
+                          serviceHistory.innerHTML = "";
 
-                            // Display only the newest entry for each date
-                            uniqueDates.forEach(date => {
-                                const newestEntry = data.serviceHistory.find(entry => entry.date === date);
-                                const li = document.createElement('li');
-                                li.textContent = `Date: ${newestEntry.date}, Status: ${newestEntry.status}`;
-                                serviceHistory.appendChild(li);
-                            });
-                        }
-                        
-                        // Set button link if available
-                        if (data.buttonLink) {
-                            customButton.onclick = function() {
-                                window.location.href = data.buttonLink;
-                            };
-                        } else {
-                            customButton.onclick = function() {
-                                alert('Please be patient; we are currently adding your information.');
-                            };
-                        }
+                          // Display only the newest entry for each date
+                          uniqueDates.forEach(date => {
+                              const newestEntry = data.serviceHistory.find(entry => entry.date === date);
+                              const li = document.createElement('li');
+                              li.textContent = `Date: ${newestEntry.date}, Status: ${newestEntry.status}`;
+                              serviceHistory.appendChild(li);
+                          });
+                      }
+                      
+                      // Set button link if available
+                      if (data.buttonLink) {
+                          customButton.onclick = function() {
+                              window.location.href = data.buttonLink;
+                          };
+                      } else {
+                          customButton.onclick = function() {
+                              alert('Please be patient; we are currently adding your information.');
+                          };
+                      }
 
-                    } else {
-                        alert("No such document!");
-                    }
-                }).catch(error => {
-                    console.log("Error getting document:", error);
-                });
+                  } else {
+                      alert("No such document!");
+                  }
+              }).catch(error => {
+                  console.log("Error getting document:", error);
+              });
 
-               
-            } else {
-                alert("No user is signed in");
-            }
-        });
-    }());
-</script>
-<script>
-  const signOutBtn = document.getElementById('signOutBtn');
+              
+          } else {
+              alert("No user is signed in");
+          }
+      });
+  }());
+  </script>
+  <script>
+const signOutBtn = document.getElementById('signOutBtn');
 
-  signOutBtn.addEventListener('click', () => {
-    firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      console.log("User signed out successfully");
-      // Redirect to the index page
-      window.location.href = "index.html";
-    }).catch((error) => {
-      // An error happened.
-      console.error("Error signing out:", error);
-    });
+signOutBtn.addEventListener('click', () => {
+  firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+    console.log("User signed out successfully");
+    // Redirect to the index page
+    window.location.href = "index.html";
+  }).catch((error) => {
+    // An error happened.
+    console.error("Error signing out:", error);
   });
-</script>
+});
+  </script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

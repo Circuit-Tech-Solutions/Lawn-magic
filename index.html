@@ -12,434 +12,81 @@
       
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/yny2hck.css">
-  <style>
-     @font-face { font-family: Grass; src: url('Wave of Life Free.otf'); } 
-
-    body{
-    background-color: #DBE7C9;
-overflow-x: hidden;    
-font-size: 30px;
-    font-family: "brevia", sans-serif;
-    font-style: normal;
-    
-}
-h1{
-   font-size: 70px;
-   font-weight: 700;
-
-}
-
-
-.custom-section {
-  height: 300px;
-  background-color: #627254; /* Change to your desired color */
-}
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-.Main{
-    font-size: 65px;
-}
-.Main-list{
-    font-size: 30px;
-}
-.Main-p{
-    font-size: 40px;
-}
-.btn-custom{
-    border-color: #c2eca4;
-    background-color: azure;
-    color: black;
-    border-radius: 10px;
-    width: 130px;
-    height: 70px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-custom:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:azure;
-  border-color:  rgb(177, 223, 161);
-  color: black;
-}
-.cta1{
-    background-color: #50623A;
-    border-color: azure;
-    width: 200px;
-    height: 100px;
-    border-radius: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
-
-}
-.cta2{
-    border-color: #a6ff67;
-    background-color: azure;
-    width: 200px;
-    height: 100px;
-    border-radius: 20px;
-    color: black;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cta1:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color: #50623A;
-  border-color: azure;
-}
-.cta2:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:azure;
-  border-color:  rgb(177, 223, 161);
-  color: black;
-}
-
-.WWD{
-    font-size: 24px;
-}
-
-.Services img{
-    width: 120px;
-}
-.Services h2{
-    font-weight: 700;
-}
-.Services p{
-    font-size: 15px;
-}
-.Services div{
-    width: 100%;
-}
-.fqa{
-    font-size: 70px;
-}
-.pricing-box {
-background-color: #ffffff;
-padding: 40px 20px;
-border: 1px solid #F8F9FB;
-border-radius: 6px;
-box-shadow: 0 0 1px 0 rgba(0,12,32,0.04), 0 10px 16px 0 rgba(10,31,68,0.06);
-margin-top: 30px;
-transition: all 0.3s ease;
-}
-.pricing-box:hover {
-transform: scale(1.05);
-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.reveal{
-position: relative;
-transform: translateY(150px);
-opacity: 0;
-transition: 3s all ease;
-}
-.reveal.active{
-transform: translateY(0);
-opacity: 1;
-}
-
-.pricing-box h3 {
-font-size: 22px;
-letter-spacing: .1em;
-color: #2e9200;
-}
-
-.pricing-box h6 {
-font-size: 60px;
-font-weight: 900;
-color: #3a3f52;
-}
-
-.pricing-box p {
-font-size: 17px;
-margin-top: 15px;
-padding: 0px;
-}
-
-.pricing-box ul {
-padding-left: 10px;
-}
-
-.pricing-box li {
-font-size: 14px;
-font-weight: 300;
-color: #488233;
-letter-spacing: .1em;
-
-}
-
-.pricing-box span {
-font-weight: 500;
-color: #358fcb;
-}
-
-.pricing-box small {
-color: #488233;
-letter-spacing: .2em;
-}
-
-.pricing-box i {
-font-size: 20px;
-color: #87cf54;
-margin-right: 10px;
-}
-
-.pricing-box .demo {
-color: #6772e5!important;
-}
-.Price h6, .Price h2,  .Price h1{
-text-align: center;
-}
-
-.btn-sub{
-color: black;
-margin-bottom:10px ;
-  background-color:azure;
-  border-color: rgb(177, 223, 161) ;
-}
-.btn-sub:HOVER {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:rgb(177, 223, 161);
-  border-color: azure ;
-  color: black;
-}
-
-.custom-section2 p{
-    font-size: 20px;
-}
-.accordion {
-color: #1d4d21;
-background-color: transparent;
-cursor: pointer;
-padding: 18px;
-width: 100%;
-border: none;
-text-align: left;
-outline: none;
-font-size: 33px;
-transition: 0.4s;
-border: transparent;
-margin-left: 30px;
-
-}
-
-.active, .accordion:hover {
-background-color: rgb(177, 223, 161);
-}
-
-.accordion:after {
-content: '\002B';
-color: #777;
-font-weight: bold;
-float: right;
-margin-left: 5px;
-}
-
-.active:after {
-content: "\2212";
-}
-
-.panel {
-padding: 0 18px;
-max-height: 0;
-margin-left: 15px;
-overflow: hidden;
-transition: max-height 0.2s ease-out;
-}
-.panel:hover{
-    background-color: rgb(177, 223, 161);;
-}
-
-.container {
-  padding: 20px 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
-
-
-/* Hide the <p> element in the first section on mobile screens */
-@media (max-width: 767px) {
-    .Main-p p {
-    display: none;
-    }
-   
-    .Services{
-    text-align: left;
-    font-size: 20px;
-    }
-    body{
-    text-align: center;
-    margin-left: 6%;
-    }
-    ul{
-        text-align: left;
-    }
-   
-    .WWD p{
-        font-size: 20px;
-    }
-    .Price p{
-    font-size: 15px;
-}
-    .accordion {
-        font-size: 20px;
-        width: 90%;
-    }
-    .text{
-        font-size:30px;
-        text-align: center;
-        margin-top: 10px;
-        margin: 10px;
-    }
-    .custom-section3 {
-    height: 600px;
-    background-color: #627254; /* Change to your desired color */
-    }
-    .custom-section3 button {
-        margin-left:20% ;
-        width: 240px;
-    }
-    .cta1{
-      margin-bottom: 30px;
-    }
-}
-
-/* Adjust font sizes for better readability on mobile devices */
-@media (max-width: 767px) {
-h1.Main {
-font-size: 40px;
-}
-.Main-list li {
-font-size: 20px;
-}
-.Main-p {
-font-size: 30px;
-}
-.fqa {
-font-size: 50px;
-}
-}
-
-/* Center elements horizontally on both mobile and desktop screens */
-.container {
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 767px) {
-.container {
-padding: 10px 0;
-}
-}
-
-/* Center the navbar items */
-.navbar-brand, .ml-auto {
-display: flex;
-align-items: center;
-}
-
-/* Center the footer items */
-.footer {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 767px) {
-.footer {
-padding: 20px 0;
-}
-}
-
-  </style>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-  <!-- Navigation Bar for Guests -->
-<!-- Guest Navigation Bar -->
-<div id="guest-navbar">
+  <!-- Guest Navigation Bar -->
+  <div id="guest-navbar">
+    <nav class="navbar navbar-light custom-navbar fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/lawn_magic_logo.png" class="d-inline-block align-top logo" alt="">
+            <h1 class="mb-0 ml-2">Lawn Magic</h1>
+        </a>
+        <div class="ml-auto d-flex align-items-center">
+            <button class="btn btn-primary btn-custom" onclick="document.location='login.html'">Sign In</button>
+        </div>
+    </nav>
+  </div>
 
-<nav id="guest-navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-transparent">
-  <a class="navbar-brand" href="#">
-    <img src="img/lawn_magic_logo.png" width="30" height="30" alt="">Lawn Magic
-  </a>
-  <div class="ml-auto">
-    <button class="btn btn-primary btn-custom" onclick="document.location='login.html'">Sign In</button>
+  <!-- Authenticated User Navigation Bar -->
+  <div id="auth-navbar">
+    <nav class="navbar navbar-light custom-navbar fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="img/lawn_magic_logo.png" style="background-color: #d6f381; border-radius: 50px;" class="d-inline-block align-top" alt="">
+          <h1 class="mb-0 ml-2">Lawn Magic</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="clientDashboard.html">
+                        <img src="img/grass.png" class="img-fluid" alt="Service 1"> Subscription
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="accountinfo.html">
+                        <img src="img/user.png" class="img-fluid" alt="Service 2"> Account
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="img/logout.png" class="img-fluid" alt="Service 3"> Sign Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
   </div>
-</nav>
-</div>
-<!-- Authenticated User Navigation Bar -->
-<div id="auth-navbar">
-<nav class="navbar navbar-light custom-navbar fixed-top">
-  <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="img/lawn_magic_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    <h1 class="mb-0 ml-2">Lawn Magic</h1>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse ml-auto" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="clientDashboard.html">
-          <img src="grass.png" class="img-fluid" alt="Service 1"> Subscription
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <img src="user.png" class="img-fluid" alt="Service 2"> Account
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <img src="logout.png" class="img-fluid" alt="Service 3"> Sign Out
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-</div>
-<!-- Navigation Bar for Authenticated Users -->
 
 
 
   <!-- First Section -->
   <div class="container mt-5">
     <div class="row h-100">
-    <div class="col-md-6 d-flex flex-column justify-content-center " style="height: 90vh;">
-        <h1 class="Main">Subscription Lawncare <br>Starting at $36/month</h1>
-        <ul class="Main-list">
-        <li>Monthly or bi-weekly plans</li>
-        <li>Easy online payments</li>
-        <li>Cancel any time</li>
-        </ul>
-        <div>
-            
-        <button class="btn btn-secondary cta1">Button 1</button>
-        <button class="btn btn-secondary cta2">Button 2</button>
-        </div>
-    </div>
-    <div class="col-md-6 d-flex align-items-center Main-p">
+      <div class="col-md-6 d-flex flex-column justify-content-center " style="height: 90vh;">
+          <h1 class="Main">Subscription Lawncare <br>Starting at $36/month</h1>
+          <ul class="Main-list">
+          <li>Monthly or bi-weekly plans</li>
+          <li>Easy online payments</li>
+          <li>Cancel any time</li>
+          </ul>
+          <div>
+              
+          <button class="btn btn-secondary cta1"  onclick="document.location='login.html'" >Get Started</button>
+          <button class="btn btn-secondary cta2 scroll-btn" data-target="#pricing ">View Services</button>
+          </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center Main-p">
         <p>Lawn Magic subscription based lawncare services are a fast, easy, and convenient way to keep your lawn looking great for one low monthly payment.</p>
+     </div>
     </div>
-    </div>
-    </div>
+  </div>
 
- 
-    <!-- Short Section with Different Background Color -->
+
+  <!-- Short Section with Different Background Color -->
   <div class="custom-section full-width mt-5" >
     <div class="container h-100">
       <div class="row h-100">
@@ -453,111 +100,108 @@ padding: 20px 0;
     </div>
   </div>
 
-  
- 
-  
-    <!-- Services Section -->
-    <section id="pricing" style="margin-top: 100px;" > 
-        <div class="container ">
-        
-        
-        <div class="Price">
-        
-        <h1>Service Plans</h1>
-        <p>Select a service plan and a billing type that fits your needs. Plans are billed monthly and can be scaled up or down as your needs change. Cancel anytime.</p>
-        <div class="row">
-            
-            <div class="col-md-6">
-            <div class="pricing-box best">
-                <h3 >Monthly</h3>
-                <h6>$36 <sup style="font-size: 30px;">/ Monthly</sup></h6>
-                <div class="divider-light"></div>
-                <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
-                <ul>
-                <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
-                <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
-                <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Leaf blow all lawn trimmings</li>
-                <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> <strong>Monthly lawncare service</strong></li>
-                </ul>
-            </div>
-            </div>
-            <div class="col-md-6">
-                <div class="pricing-box best">
-                <h3 >Bi-Weekly  <span class="ribbon">MOST POPULAR</span></button> </h3>
-                <h6>$63<sup style="font-size: 30px;">/ Monthly</sup></h6>
-                <div class="divider-light"></div>
-                <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
-                <ul>
-                    <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
-                    <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
-                    <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Leaf blow all lawn trimmings</li>
-                <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> <strong>Service every other week</strong></li>
-                </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <div class="container mt-5">
-        <div class="row Services">
-        <div class="col-md-12">
-            <h1>Services</h1>
-        </div>
-        <div class="col-md-4 ">
-            <img src="img/lawn-mower.png" class="img-fluid" alt="Service 1">
-            <h2 style="margin-top: 20px;">Mowing</h2>
-            <p>All grass on property will be neatly and evenly mowed. Giving your lawn a clean polished look all year round.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="img/lawn-mower (1).png" class="img-fluid" alt="Service 2">
-            <h2 style="margin-top: 20px;">Edging</h2>
-            <p>Our precise edging service ensures all grass along walkways is neatly trimmed, keeping sidewalks tidy.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="img/leaf-blower.png" class="img-fluid" alt="Service 3">
-            <h2 style="margin-top: 20px;">Leaf Blowing</h2>
-            <p>All trimmings from mowing and edging will be blown clear of the property keeping your property looking clean and brand new.</p>
-        </div>
-        </div>
-        <div class="row Services " style="margin-top: 30px;">
-            <div class="col-md-12">
-            <h1 style=" font-size: 70px;">Premium Services</h1>
-            </div>
-            <div class="col-md-12 ">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="img/raking.png" class="img-fluid" alt="Service 1">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 style="margin-top: 20px;">Cleanup</h2>
-                        <p>We ensure thorough removal of debris such as rocks, trash, tree branches, and more, ensuring your property is pristine and free from obstructions. Certain limitations may apply.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2 style="margin-top: 20px;">Cost</h2>
-                        <h3><strong>80-hr</strong></h3>                   
-                    </div>
-                </div>
-            
-            </div
-        </div>
-    </div>
-    </div>
-    </div>
+  <!-- Services Section -->
+  <section id="pricing" style="margin-top: 100px;" > 
+      <div class="container ">
+      
+      
+      <div class="Price">
+      
+      <h1>Service Plans</h1>
+      <p>Select a service plan and a billing type that fits your needs. Plans are billed monthly and can be scaled up or down as your needs change. Cancel anytime.</p>
+      <div class="row">
+          
+          <div class="col-md-6">
+          <div class="pricing-box best">
+              <h3 >Monthly</h3>
+              <h6>$36 <sup style="font-size: 30px;">/ Monthly</sup></h6>
+              <div class="divider-light"></div>
+              <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
+              <ul>
+              <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
+              <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
+              <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Leaf blow all lawn trimmings</li>
+              <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> <strong>Monthly lawncare service</strong></li>
+              </ul>
+          </div>
+          </div>
+          <div class="col-md-6">
+              <div class="pricing-box best">
+              <h3 >Bi-Weekly  <span class="ribbon">MOST POPULAR</span></button> </h3>
+              <h6>$63<sup style="font-size: 30px;">/ Monthly</sup></h6>
+              <div class="divider-light"></div>
+              <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
+              <ul>
+                  <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
+                  <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
+                  <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Leaf blow all lawn trimmings</li>
+              <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> <strong>Service every other week</strong></li>
+              </ul>
+              </div>
+          </div>
+      </div>
+      </div>
+      </div>
+  </section>
+  <div class="container mt-5">
+      <div class="row Services">
+      <div class="col-md-12">
+          <h1>Services</h1>
+      </div>
+      <div class="col-md-4 ">
+          <img src="img/lawn-mower.png" class="img-fluid" alt="Service 1">
+          <h2 style="margin-top: 20px;">Mowing</h2>
+          <p>All grass on property will be neatly and evenly mowed. Giving your lawn a clean polished look all year round.</p>
+      </div>
+      <div class="col-md-4">
+          <img src="img/lawn-mower (1).png" class="img-fluid" alt="Service 2">
+          <h2 style="margin-top: 20px;">Edging</h2>
+          <p>Our precise edging service ensures all grass along walkways is neatly trimmed, keeping sidewalks tidy.</p>
+      </div>
+      <div class="col-md-4">
+          <img src="img/leaf-blower.png" class="img-fluid" alt="Service 3">
+          <h2 style="margin-top: 20px;">Leaf Blowing</h2>
+          <p>All trimmings from mowing and edging will be blown clear of the property keeping your property looking clean and brand new.</p>
+      </div>
+      </div>
+      <div class="row Services " style="margin-top: 30px;">
+          <div class="col-md-12">
+          <h1 style=" font-size: 70px;">Premium Services</h1>
+          </div>
+          <div class="col-md-12 ">
+              <div class="row">
+                  <div class="col-md-2">
+                      <img src="img/raking.png" class="img-fluid" alt="Service 1">
+                  </div>
+                  <div class="col-md-6">
+                      <h2 style="margin-top: 20px;">Cleanup</h2>
+                      <p>We ensure thorough removal of debris such as rocks, trash, tree branches, and more, ensuring your property is pristine and free from obstructions. Certain limitations may apply.</p>
+                  </div>
+                  <div class="col-md-4">
+                      <h2 style="margin-top: 20px;">Cost</h2>
+                      <h3><strong>80-hr</strong></h3>                   
+                  </div>
+              </div>
+          
+          </div
+      </div>
+  </div>
+  </div>
+  </div>
 
-    <!-- Short Section with Different Background Color -->
-    <div class="custom-section full-width mt-5" >
-        <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-md-6 d-flex align-items-center">
-            <h2>Heading 2</h2>
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-            <p>Paragraph text here.</p>
-            </div>
-        </div>
-        </div>
-    </div>
+  <!-- Short Section with Different Background Color -->
+  <div class="custom-section full-width mt-5" >
+      <div class="container h-100">
+      <div class="row h-100">
+          <div class="col-md-6 d-flex align-items-center">
+          <h2>Heading 2</h2>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+          <p>Paragraph text here.</p>
+          </div>
+      </div>
+      </div>
+  </div>
 
 
   <!-- Another Section -->
@@ -586,57 +230,78 @@ padding: 20px 0;
     </div>
   </div>
   
-        <!-- Short Section with Different Background Color -->
-        <div class="custom-section3 full-width mt-5" >
-            <div class="container h-100 ">
-            <div class="row h-100 ">
-                <div class="col-md-4  align-items-center">
-                <h2><strong>Still not sure? <br>Text us!</strong></h2>
-                </div>
-                <div class="col-md-8 d-flex align-items-center text">
-                <p>We're happy to discuss our services or answer any questions you might have. Just tap the button below to send us a quick text, and we'll get back to you as soon as possible.</p>
-                </div>
-                <button class="btn btn-primary btn-custom">Sign In</button>
-               
+  <!-- Short Section with Different Background Color -->
+  <div class="custom-section3 full-width mt-5" >
+      <div class="container h-100 ">
+      <div class="row h-100 ">
+          <div class="col-md-4  align-items-center">
+          <h2><strong>Still not sure? <br>Text us!</strong></h2>
+          </div>
+          <div class="col-md-8 d-flex align-items-center text">
+          <p>We're happy to discuss our services or answer any questions you might have. Just tap the button below to send us a quick text, and we'll get back to you as soon as possible.</p>
+          </div>
+          <button class="btn btn-primary btn-custom">Sign In</button>
+          
 
-            </div>
-            </div>
-        </div>
-        <script>
-          // Your web app's Firebase configuration
-          var firebaseConfig = {
-                  apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
-                  authDomain: "lawn-magic-a3c44.firebaseapp.com",
-                  projectId: "lawn-magic-a3c44",
-                  storageBucket: "lawn-magic-a3c44.appspot.com",
-                  messagingSenderId: "207655043153",
-                  appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
-              };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-        </script>
-        <script>
-          firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-              // User is signed in, show the authenticated navbar
-              document.getElementById('auth-navbar').style.display = 'block';
-              document.getElementById('guest-navbar').style.display = 'none';
-            } else {
-              // No user is signed in, show the guest navbar
-              document.getElementById('auth-navbar').style.display = 'none';
-              document.getElementById('guest-navbar').style.display = 'block';
-            }
-          });
-        
-          // Function to sign out the user
-          function signOut() {
-            firebase.auth().signOut().then(() => {
-              console.log('User signed out');
-            }).catch((error) => {
-              console.error('Error signing out:', error);
+      </div>
+      </div>
+  </div>
+
+  
+  <footer class="container mt-5">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>© 2024. Created with passion by Circuit Tech Solutions LLC. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+            apiKey: "AIzaSyCkrma8-C8lxKvvD9LJZY-9gQx_nus52GE",
+            authDomain: "lawn-magic-a3c44.firebaseapp.com",
+            projectId: "lawn-magic-a3c44",
+            storageBucket: "lawn-magic-a3c44.appspot.com",
+            messagingSenderId: "207655043153",
+            appId: "1:207655043153:web:033a2b6d24c43f13fdb870"
+        };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    // Add smooth scrolling to all buttons with data-target attribute
+    document.querySelectorAll('.scroll-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.getAttribute('data-target');
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
             });
-          }
-        </script>
+        });
+    });
+  </script>
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in, show the authenticated navbar
+        document.getElementById('auth-navbar').style.display = 'block';
+        document.getElementById('guest-navbar').style.display = 'none';
+      } else {
+        // No user is signed in, show the guest navbar
+        document.getElementById('auth-navbar').style.display = 'none';
+        document.getElementById('guest-navbar').style.display = 'block';
+      }
+    });
+  
+    // Function to sign out the user
+    function signOut() {
+      firebase.auth().signOut().then(() => {
+        console.log('User signed out');
+      }).catch((error) => {
+        console.error('Error signing out:', error);
+      });
+    }
+  </script>
 
   <!-- Add Firebase SDKs -->
 
