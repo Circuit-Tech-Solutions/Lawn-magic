@@ -22,7 +22,7 @@
 @font-face { font-family: Grass; src: url('Wave of Life Free.otf'); } 
 
 body{
-  background-color: #DBE7C9;
+  background-color: #9DDE8B;
   overflow-x: hidden;    
  
   font-family: "brevia", sans-serif;
@@ -43,7 +43,7 @@ h1{
 
 .custom-section {
   height: 300px;
-  background-color: #627254; /* Change to your desired color */
+  background-color: #40A578; /* Change to your desired color */
   }
   
 .WWD{
@@ -76,7 +76,7 @@ h1{
 .navbar img{
     width: 90px; 
     height: 90px; 
-    background-color: #d6f381; 
+    background-color: #9DDE8B; 
     border-radius: 50px;
 }
 .nav-link img{
@@ -91,8 +91,8 @@ h1{
 /* 3. Main */
 /* Utility classes for common patterns and reusable styles */
 .cta1{
-  background-color: #50623A;
-  border-color: azure;
+  background-color: #006769;
+ 
   width: 200px;
   height: 100px;
   border-radius: 20px;
@@ -112,15 +112,15 @@ h1{
 .cta1:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color: #50623A;
-  border-color: azure;
+  background-color: #01393a;
+
 }
 .cta2:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:azure;
+  background-color:#40A578;
   border-color:  rgb(177, 223, 161);
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 
@@ -153,9 +153,9 @@ h1{
 .btn-custom:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:azure;
+  background-color:#006769;
   border-color:  rgb(177, 223, 161);
-  color: black;
+  color: rgb(255, 255, 255);
 }
   
 /* 4. Services */
