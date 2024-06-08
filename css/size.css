@@ -1,0 +1,32 @@
+    .head{
+      margin-top: 100px;
+    }
+    .card-custom {
+      border-color: #a6ff67;
+      border-radius: 15px;
+    }
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+    }
+    .price {
+      font-size: 0.9em;
+    }
+    .card-text {
+      margin-bottom: 10px;
+    }
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+      display: block;
+    }
+    .card-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgb(177, 223, 161);
+      border-color: azure;
+    }
+    a:link, a:visited {
+      text-decoration: none;
+      color: black;
+    }

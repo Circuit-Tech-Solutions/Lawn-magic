@@ -13,41 +13,10 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/yny2hck.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/size.css">
+
 </head>
-<style>
-    .head{
-      margin-top: 100px;
-    }
-    .card-custom {
-      border-color: #a6ff67;
-      border-radius: 15px;
-    }
-    .card-title {
-      display: flex;
-      justify-content: space-between;
-    }
-    .price {
-      font-size: 0.9em;
-    }
-    .card-text {
-      margin-bottom: 10px;
-    }
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
-      display: block;
-    }
-    .card-link:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgb(177, 223, 161);
-      border-color: azure;
-    }
-    a:link, a:visited {
-      text-decoration: none;
-      color: black;
-    }
-</style>
+
 <body>
 
   <!-- Guest Navigation Bar -->
@@ -98,7 +67,7 @@
 
   <div class="container mt-4">
     <p class="head">Basic</p>
-    <h2><strong>Bi-Weekly Service</strong></h2>
+    <h2><strong>Monthly Service</strong></h2>
     <h4 class="mt-4">Select lawn size</h4>
     <div class="row mt-4">
       <!-- Card 1 -->
@@ -108,7 +77,7 @@
           <div class="card-body">
             <h5 class="card-title">
               <span>Small</span>
-              <span class="price">$81/month</span>
+              <span class="price">$36/month</span>
             </h5>
             <p class="card-text">Lawns less than 1,000 sq/ft</p>
             <p class="card-text small">Billed monthly, cancel anytime</p>
@@ -123,9 +92,9 @@
           <div class="card-body">
             <h5 class="card-title">
               <span>Small</span>
-              <span class="price">$81/month</span>
+              <span class="price">$47/month</span>
             </h5>
-            <p class="card-text">Lawns less than 1,000 sq/ft</p>
+            <p class="card-text">Lawns between 1,000 sq/ft and  2,000 sq/ft </p>
             <p class="card-text small">Billed monthly, cancel anytime</p>
           </div>
         </div>
@@ -138,9 +107,9 @@
           <div class="card-body">
             <h5 class="card-title">
               <span>Small</span>
-              <span class="price">$81/month</span>
+              <span class="price">$58/month</span>
             </h5>
-            <p class="card-text">Lawns less than 1,000 sq/ft</p>
+            <p class="card-text">Lawns between 2,000 sq/ft and  3,000 sq/ft </p>
             <p class="card-text small">Billed monthly, cancel anytime</p>
           </div>
         </div>
@@ -198,9 +167,9 @@
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in, set links for authenticated users
-        document.getElementById('card-link-1').href = 'https://example.com/auth-link-1';
-        document.getElementById('card-link-2').href = 'https://example.com/auth-link-2';
-        document.getElementById('card-link-3').href = 'https://example.com/auth-link-3';
+        document.getElementById('card-link-1').href = 'https://buy.stripe.com/3csaIf0zZ2jU0IoaEJ';
+        document.getElementById('card-link-2').href = 'https://buy.stripe.com/9AQbMjfuT5w6eze3cg';
+        document.getElementById('card-link-3').href = 'https://buy.stripe.com/5kA8A7ciHf6G62I3cf';
       } else {
         // No user is signed in, set links for guest users
         document.getElementById('card-link-1').href = 'login.html';

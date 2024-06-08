@@ -116,7 +116,7 @@
               <h3 >Monthly</h3>
               <h6>$36 <sup style="font-size: 30px;">/ Monthly</sup></h6>
               <div class="divider-light"></div>
-              <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
+              <button class="btn btn-primary btn-sub"  id="card-link-1" style="width: 100%;">Subscribe</button>
               <ul>
               <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
               <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
@@ -130,7 +130,7 @@
               <h3 >Bi-Weekly  <span class="ribbon">MOST POPULAR</span></button> </h3>
               <h6>$63<sup style="font-size: 30px;">/ Monthly</sup></h6>
               <div class="divider-light"></div>
-              <button class="btn btn-primary btn-sub" style="width: 100%;">Subscribe</button>
+              <button class="btn btn-primary btn-sub"  id="card-link-1" style="width: 100%;">Subscribe</button>
               <ul>
                   <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Mow all grass on property</li>
                   <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Edge alone walks and surfaces</li>
@@ -290,6 +290,26 @@
         // No user is signed in, show the guest navbar
         document.getElementById('auth-navbar').style.display = 'none';
         document.getElementById('guest-navbar').style.display = 'block';
+      }
+    });
+  
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in, set links for authenticated users
+        document.getElementById('card-link-1').onclick = function() {
+          window.location.href = 'monthly.html';
+        };
+        document.getElementById('card-link-2').onclick = function() {
+          window.location.href = 'bi-weekly.html';
+        };
+      } else {
+        // No user is signed in, set links for guest users
+        document.getElementById('card-link-1').onclick = function() {
+          window.location.href = 'login.html';
+        };
+        document.getElementById('card-link-2').onclick = function() {
+          window.location.href = 'login.html';
+        };
       }
     });
   
