@@ -69,11 +69,7 @@ body{
     border-radius: 10px;
 }
 
-h1{
-  font-size: 70px;
-  font-weight: 700;
 
-}
 
 .date{
     font-size: 80px;
@@ -86,7 +82,7 @@ h1{
     height: 100vh;
     position: fixed;
     left: 5vw;
-    top: 15vh;
+    top: 20vh;
     text-align: left;
 }
 .sidebar-nav a {
@@ -162,9 +158,9 @@ h1{
   }
 
   .Name{
-      margin-top: 14px;
+    margin-top: 14px;
   }
-
+ 
 /* 4. Media Queries */
 /* Media queries for responsive design */
 @media (max-width: 992px) {
