@@ -19,13 +19,15 @@
 
 /* 1. Base Elements */
 /* Styles for base HTML elements like headings, paragraphs, lists, etc. */
-@font-face { font-family: Grass; src: url('Wave of Life Free.otf'); } 
+
+@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Kameron:wght@400..700&display=swap');
 
 body{
   background-color: #9DDE8B;
   overflow-x: hidden;    
  
-  font-family: "brevia", sans-serif;
+  font-family: 'Glegoo', serif;
+
   font-style: normal;
     
 }
@@ -264,9 +266,9 @@ h1{
 .btn-sub:HOVER {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px  rgb(177, 223, 161);
-  background-color:rgb(177, 223, 161);
+  background-color:#006769;
   border-color: azure ;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 /* 6. FQA */
 .fqa{
@@ -294,7 +296,7 @@ h1{
 }
 
 .active, .accordion:hover {
-  background-color: rgb(177, 223, 161);
+  background-color: #40A578;
 }
 
 .accordion:after {

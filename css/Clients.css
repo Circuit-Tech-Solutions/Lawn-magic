@@ -15,6 +15,10 @@
 =========================================================
 */
 /* 0. NavBars */
+
+@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Kameron:wght@400..700&display=swap');
+
+
 .navbar{
   background-color: #d6f381;
 
@@ -59,7 +63,8 @@
 /* 1. Base Elements */
 /* Styles for base HTML elements like headings, paragraphs, lists, etc. */
 body{
-    background-color: rgb(165, 216, 165);
+    background-color: #9DDE8B;
+    font-family: 'Glegoo', serif;
 }
 
 .content-box {
