@@ -6,6 +6,7 @@
 =========================================================
 
   Table of Contents:
+  0. Nav bar
   1. Base Elements
   2. Sidebar
   3. Layout
@@ -13,6 +14,46 @@
 
 =========================================================
 */
+/* 0. NavBars */
+.navbar{
+  background-color: #d6f381;
+
+}
+/* Styles for reusable UI components like buttons, cards, forms, etc. */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Center the brand and button vertically */
+.navbar .navbar-toggler {
+  margin-left: auto;
+}
+
+.custom-navbar h1 {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+}
+
+.custom-navbar img {
+  width: 30px;
+  height: 30px;
+}
+
+.navbar img{
+    width: 90px; 
+    height: 90px; 
+    
+}
+.nav-link img{
+  width: 50px;
+  height: auto;
+}
+.navbar-brand, .ml-auto {
+  display: flex;
+  
+  align-items: center;
+  }
 
 
 /* 1. Base Elements */
@@ -28,8 +69,10 @@ body{
     border-radius: 10px;
 }
 
-.navbar img {
-    width: 10px;
+h1{
+  font-size: 70px;
+  font-weight: 700;
+
 }
 
 .date{
@@ -71,6 +114,8 @@ body{
   .subscription-details {
     margin-top: 20px;
   }
+
+  
   .subscription-details h1 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -135,6 +180,12 @@ body{
     .Name{
       display: none;
     }
+    .content-box h1{
+      font-size: 2rem;
+    }
+    .row{
+      margin-top: 50px;
+    }
   }
   @media (min-width: 992px) {
     .navbar {
@@ -154,4 +205,19 @@ body{
     .Name h1 {
       margin: 0;
     }
+  }
+    
+  @media (max-width: 768px) {
+    .navbar-brand h1 {
+        font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+  
+    .navbar img{
+      width: 50px; 
+      height: 50px;
+    }
+    
   }

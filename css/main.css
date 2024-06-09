@@ -52,6 +52,10 @@ h1{
 }
   
 /* 2. NavBars */
+.navbar{
+  background-color: #d6f381;
+
+}
 /* Styles for reusable UI components like buttons, cards, forms, etc. */
 .navbar-brand {
   display: flex;
@@ -76,8 +80,7 @@ h1{
 .navbar img{
     width: 90px; 
     height: 90px; 
-    background-color: #9DDE8B; 
-    border-radius: 50px;
+    
 }
 .nav-link img{
   width: 50px;
@@ -85,6 +88,7 @@ h1{
 }
 .navbar-brand, .ml-auto {
   display: flex;
+  
   align-items: center;
   }
     
@@ -384,9 +388,8 @@ content: "\2212";
     width: 50px; 
     height: 50px;
   }
-  .navbar-collapse{
-  background-color:rgb(239, 236, 225);
-}
+  
+
 
 }
 
