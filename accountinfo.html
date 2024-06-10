@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <a class="nav-link" href="#">
                         <img src="img/logout.png" class="img-fluid"  id="signOutBtn" alt="Service 3"> Sign Out
                     </a>
                 </li>
@@ -66,7 +66,8 @@
           <div class="sidebar-nav">
             <a href="clientDashboard.html"><img src="img/grass.png" class="img-fluid" alt="Subscription"> Subscription</a>
             <a href="accountinfo.html"><img src="img/user.png" class="img-fluid" alt="Account"> Account</a>
-            <a href="#"><img src="img/logout.png" class="img-fluid" alt="Sign Out" id="signOutBtn"> Sign Out</a>
+            <a href="#" id="sidebarSignOutBtn">
+              <img src="img/logout.png" class="img-fluid" alt="Sign Out"> Sign Out</a>
           </div>
         </div>
       </div>
@@ -160,19 +161,37 @@
     }());
 </script>
 <script>
-  const signOutBtn = document.getElementById('signOutBtn');
-
-  signOutBtn.addEventListener('click', () => {
-    firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      console.log("User signed out successfully");
-      // Redirect to the index page
-      window.location.href = "index.html";
-    }).catch((error) => {
-      // An error happened.
-      console.error("Error signing out:", error);
+   // Function to sign out the user
+   const signOutBtn = document.getElementById('signOutBtn');
+    
+    signOutBtn.addEventListener('click', () => {
+      firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("User signed out successfully");
+        // Redirect to the index page
+        window.location.href = "index.html";
+      }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out:", error);
+      });
     });
-  });
+</script>
+<script>
+  // Function to sign out the user from the sidebar
+const sidebarSignOutBtn = document.getElementById('sidebarSignOutBtn');
+
+sidebarSignOutBtn.addEventListener('click', () => {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("User signed out successfully");
+        // Redirect to the index page
+        window.location.href = "index.html";
+    }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out:", error);
+    });
+});
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

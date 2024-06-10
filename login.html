@@ -141,7 +141,6 @@
         <button type="submit" class="btn shadow" id="btnSubmitInfo">Submit</button>
     </div>
 
-    <script src="script.js"></script>
     <script>
         (function() {
             var firebaseConfig = {
@@ -212,7 +211,7 @@
                         showMessage('Incorrect password.', 'danger');
                     } else {
                         console.error(e.message);
-                        showMessage('An error occurred. Please try again.', 'danger');
+                        showMessage('Incorrect password.', 'danger');
                     }
                 });
             });

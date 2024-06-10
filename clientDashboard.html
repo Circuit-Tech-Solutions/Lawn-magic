@@ -75,7 +75,7 @@
         <div class="sidebar-nav">
           <a href="clientDashboard.html"><img src="img/grass.png" class="img-fluid" alt="Subscription"> Subscription</a>
           <a href="accountinfo.html"><img src="img/user.png" class="img-fluid" alt="Account"> Account</a>
-          <a href="#"><img src="img/logout.png" class="img-fluid" alt="Sign Out" id="signOutBtn"> Sign Out</a>
+          <a  href="#"  id="sidebarSignOutBtn"><img src="img/logout.png" class="img-fluid" alt="Sign Out" id="signOutBtn"> Sign Out</a>
         </div>
       </div>
     
@@ -89,7 +89,8 @@
               <h1>Basic:</h1>
               <h5 id="priceFrequency"></h5>
               <div class="divider"></div>
-              <button class="btn btn-primary">Change Subscription</button>
+              <a href="index.html">
+              <button class="btn btn-primary" >Change Subscription</button></a>
               <div class="payments-section">
                 <h5>Payments</h5>
                 <p>Subscriptions are billed on a monthly basis after your first payment.</p>
@@ -214,6 +215,23 @@ signOutBtn.addEventListener('click', () => {
     console.error("Error signing out:", error);
   });
 });
+  </script>
+  <script>
+    // Function to sign out the user from the sidebar
+const sidebarSignOutBtn = document.getElementById('sidebarSignOutBtn');
+
+sidebarSignOutBtn.addEventListener('click', () => {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("User signed out successfully");
+        // Redirect to the index page
+        window.location.href = "index.html";
+    }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out:", error);
+    });
+});
+
   </script>
 
 
