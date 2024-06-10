@@ -32,7 +32,7 @@
             max-width: 400px;
             margin: 100px auto;
             padding: 20px;
-            background: #fff;
+            background: #d6f381;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -75,15 +75,39 @@
 
         @media (max-width: 576px) {
             .center {
-                width: 100%;
+                width: 85%;
                 margin: 20px auto;
                 padding: 10px;
+                max-width: 100%;
+
             }
         }
+
+        .alert {
+            display: none;
+        }
+        a{
+            text-decoration: none ; 
+            color: #333;
+        }
+        a:hover {
+            color: #333;
+
+
+        }
+      
+        
     </style>
 </head>
 <body>
     <div class="col-4 center" id="loginForm">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/lawn_magic_logo.png" style=" width: 90px; height: 90px; " class="d-inline-block align-top logo" alt="">
+            <h1 class="mb-0 ml-2">Lawn Magic</h1>
+        </a>
+        <!-- Out Log -->
+        <div id="outLog" class="alert alert-info"></div>
+
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" class="form-control shadow-sm" id="txtEmail" name="email">
@@ -94,17 +118,18 @@
         </div>
         <button type="submit" class="btn shadow" id="btnLogin">Login</button>
         <button type="submit" class="btn shadow" id="btnSignup">Signup</button>
+        <button class="btn btn-link" id="btnForgotPassword">Forgot Password?</button>
     </div>
 
     <div class="col-4 center" id="userInfoForm" style="display:none;">
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" class="form-control shadow-sm" id="txtFirstName" name="firstName">
-    </div>
-    <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" class="form-control shadow-sm" id="txtLastName" name="lastName">
-    </div>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control shadow-sm" id="txtFirstName" name="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control shadow-sm" id="txtLastName" name="lastName">
+        </div>
         <div class="form-group">
             <label for="phone">Phone Number:</label>
             <input type="text" class="form-control shadow-sm" id="txtPhone" name="phone">
@@ -141,14 +166,35 @@
             const btnLogin = document.getElementById('btnLogin');
             const btnSignup = document.getElementById('btnSignup');
             const btnSubmitInfo = document.getElementById('btnSubmitInfo');
+            const btnForgotPassword = document.getElementById('btnForgotPassword');
 
             const loginForm = document.getElementById('loginForm');
             const userInfoForm = document.getElementById('userInfoForm');
+            const outLog = document.getElementById('outLog');
+
+            const showMessage = (message, type='info') => {
+                outLog.classList.remove('alert-info', 'alert-danger', 'alert-success');
+                outLog.classList.add(`alert-${type}`);
+                outLog.textContent = message;
+                outLog.style.display = 'block';
+                setTimeout(() => {
+                    outLog.style.display = 'none';
+                }, 3000);
+            };
+
+            const validateEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            };
 
             btnLogin.addEventListener('click', e => {
                 e.preventDefault();
                 const email = txtEmail.value;
                 const pass = txtPassword.value;
+                if (!validateEmail(email)) {
+                    showMessage('Please enter a valid email address.', 'danger');
+                    return;
+                }
                 auth.signInWithEmailAndPassword(email, pass).then(userCredential => {
                     const user = userCredential.user;
                     firestore.collection('users').doc(user.uid).get().then(docSnapshot => {
@@ -160,7 +206,14 @@
                         }
                     });
                 }).catch(e => {
-                    console.error(e.message);
+                    if (e.code === 'auth/user-not-found') {
+                        showMessage('No account found with this email.', 'danger');
+                    } else if (e.code === 'auth/wrong-password') {
+                        showMessage('Incorrect password.', 'danger');
+                    } else {
+                        console.error(e.message);
+                        showMessage('An error occurred. Please try again.', 'danger');
+                    }
                 });
             });
 
@@ -168,12 +221,32 @@
                 e.preventDefault();
                 const email = txtEmail.value;
                 const pass = txtPassword.value;
+                if (!validateEmail(email)) {
+                    showMessage('Please enter a valid email address.', 'danger');
+                    return;
+                }
                 auth.createUserWithEmailAndPassword(email, pass).then(userCredential => {
                     const user = userCredential.user;
                     loginForm.style.display = 'none';
                     userInfoForm.style.display = 'block';
                 }).catch(e => {
                     console.error(e.message);
+                    showMessage('An error occurred. Please try again.', 'danger');
+                });
+            });
+
+            btnForgotPassword.addEventListener('click', e => {
+                e.preventDefault();
+                const email = txtEmail.value;
+                if (!validateEmail(email)) {
+                    showMessage('Please enter a valid email address to reset password.', 'danger');
+                    return;
+                }
+                auth.sendPasswordResetEmail(email).then(() => {
+                    showMessage('Password reset email sent.', 'success');
+                }).catch(e => {
+                    console.error(e.message);
+                    showMessage('An error occurred. Please try again.', 'danger');
                 });
             });
 
@@ -194,6 +267,7 @@
                         window.location.href = 'index.html';
                     }).catch(e => {
                         console.error(e.message);
+                        showMessage('An error occurred. Please try again.', 'danger');
                     });
                 }
             });
